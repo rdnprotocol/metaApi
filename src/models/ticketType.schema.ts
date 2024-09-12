@@ -7,6 +7,10 @@ const typeTicketSchema = new Schema({
         type : String,
         required : true
     },
+    mongoliaName: {
+      type : String,
+      required : true
+  },
     createdAt: {
         type: Date,
         required: true,

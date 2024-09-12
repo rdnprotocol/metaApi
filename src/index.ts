@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { connectToDatabase } from "./database";
-import { ticketRouter } from "./routes";
+import { ticketRouter ,ticketTypeRouter } from "./routes";
 
 connectToDatabase();
 
@@ -15,6 +15,8 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/costumer", ticketRouter);
+app.use("/costumer", ticketTypeRouter);
+
 
 
 app.listen(3001, () => {
