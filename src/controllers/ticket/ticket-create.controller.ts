@@ -3,10 +3,15 @@ import { ticketModel } from "../../models";
 
 export const createTicketController: RequestHandler = async (req, res) => {
   try {
-    const { ticketName } = req.body;
+    const { ticketName, ticketDesc, phoneNumber, ticketType, isHighPriority } =
+      req.body;
 
-    await ticketModel.create({
+    const { _id } = await ticketModel.create({
       ticketName,
+      description: ticketDesc,
+      phoneNumber,
+      typeTicket: ticketType,
+      isHighPriority,
     });
 
     return res.status(201).json({

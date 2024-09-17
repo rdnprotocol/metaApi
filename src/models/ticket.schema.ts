@@ -11,18 +11,23 @@ const ticketSchema = new Schema({
     required: false,
   },
   description: {
- type: String,
- required : false
+    type: String,
+    required: false,
   },
   phoneNumber: {
     type: Number,
-    required : false
-     },
-     typeTicket: {
-      type: [Schema.Types.ObjectId],
-      ref: "type_ticket",
-      required: false,
-    },
+    required: false,
+  },
+  typeTicket: {
+    type: [Schema.Types.ObjectId],
+    ref: "type_ticket",
+    required: false,
+  },
+
+  isHighPriority: {
+    type: Boolean,
+    required: false,
+  },
 
   createdAt: {
     type: Date,

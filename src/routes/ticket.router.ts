@@ -1,12 +1,14 @@
 import { Router } from "express";
 import {
-  createTicketController
+  createTicketController,
+  getTicketController
 } from "../controllers";
 
 const ticketRouter = Router();
 
 ticketRouter
-  .post("/", createTicketController)
+  .post("/ticket", createTicketController)
+  .get("/ticket", getTicketController)
 
 
 export { ticketRouter };
