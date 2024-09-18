@@ -1,12 +1,18 @@
 import { RequestHandler } from "express";
 import { ticketModel } from "../../models";
+import generateUniqueId from "generate-unique-id";
 
 export const createTicketController: RequestHandler = async (req, res) => {
   try {
     const { ticketName, ticketDesc, phoneNumber, ticketType, isHighPriority } =
       req.body;
+    const ticketNumber = generateUniqueId({
+      length: 4,
+      useLetters: false,
+    });
 
     const { _id } = await ticketModel.create({
+      ticketNumber,
       ticketName,
       description: ticketDesc,
       phoneNumber,

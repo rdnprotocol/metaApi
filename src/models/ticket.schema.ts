@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const ticketSchema = new Schema({
+  ticketNumber: {
+    type: Number,
+    required: true,
+  },
   ticketName: {
     type: String,
     required: true,
