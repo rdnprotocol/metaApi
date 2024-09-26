@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { connectToDatabase } from "./database";
-import { ticketRouter ,ticketTypeRouter } from "./routes";
+import { ticketRouter, ticketTypeRouter } from "./routes";
 
 connectToDatabase();
 
@@ -17,8 +17,6 @@ app.get("/", (_req, res) => {
 app.use("/costumer", ticketRouter);
 app.use("/costumer", ticketTypeRouter);
 
-
-
 app.listen(3001, () => {
-  console.log("Server is running on http://localhost:3001");
+  console.log("Server is running on http://localhost:3001 or renderAPI");
 });
