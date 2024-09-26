@@ -14,8 +14,8 @@ app.get("/", (_req, res) => {
   res.json({ message: "Hello World" });
 });
 
-app.use("/costumer", ticketRouter);
-app.use("/costumer", ticketTypeRouter);
+app.use("/customer", ticketRouter);
+app.use("/customer", ticketTypeRouter);
 
 app.listen(3001, () => {
   console.log("Server is running on http://localhost:3001 or renderAPI");
